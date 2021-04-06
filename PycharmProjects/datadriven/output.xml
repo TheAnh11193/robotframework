@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.9.2 on darwin)" generated="20210406 17:02:24.582" rpa="false">
+<suite id="s1" name="Homepage" source="/Users/admin/PycharmProjects/datadriven/testcase/homepage.robot">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>open the browser</arg>
+</arguments>
+<kw name="open the browser" library="homepage">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${base_url}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:25.371" level="INFO">Opening browser 'Chrome' to base url 'https://www.powerbuy.co.th/en/'.</msg>
+<status status="PASS" starttime="20210406 17:02:25.370" endtime="20210406 17:02:32.253"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210406 17:02:32.254" endtime="20210406 17:02:32.619"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:25.370" endtime="20210406 17:02:32.619"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:25.370" endtime="20210406 17:02:32.619"></status>
+</kw>
+<test id="s1-t1" name="TC-DataDriven-TV4455">
+<kw name="add to cart">
+<arguments>
+<arg>Tv</arg>
+<arg>44 - 55 inches</arg>
+<arg>TV UHD LED 2020 (55",4K,Smart) 55UN7200PTF.ATM</arg>
+</arguments>
+<kw name="serach products" library="homepage">
+<arguments>
+<arg>${search_product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_Search}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:32.622" endtime="20210406 17:02:32.659"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Search}</arg>
+<arg>${txt_input}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:32.660" level="INFO">Typing text 'Tv' into text field 'xpath=//input[@placeholder="I am looking for..."]'.</msg>
+<status status="PASS" starttime="20210406 17:02:32.659" endtime="20210406 17:02:32.827"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:32.622" endtime="20210406 17:02:32.828"></status>
+</kw>
+<kw name="click on search button" library="homepage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_Search}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:32.828" endtime="20210406 17:02:33.145"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_Search}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:33.146" level="INFO">Clicking element 'xpath=(//button[@id="btn-searchBox-input"])[1]'.</msg>
+<status status="PASS" starttime="20210406 17:02:33.145" endtime="20210406 17:02:33.524"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:32.828" endtime="20210406 17:02:33.524"></status>
+</kw>
+<kw name="Check box option" library="homepage">
+<arguments>
+<arg>${filter_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_ScreenTechnology}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:33.525" endtime="20210406 17:02:46.528"></status>
+</kw>
+<kw name="Scroll element" library="homepage">
+<arguments>
+<arg>${txt_ScreenTechnology}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:46.529" endtime="20210406 17:02:46.618"></status>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:46.618" endtime="20210406 17:02:46.904"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:46.904" endtime="20210406 17:02:46.922"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:46.529" endtime="20210406 17:02:46.922"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[contains(text(), "${option}")]/parent::div/preceding-sibling::div/div</arg>
+</arguments>
+<msg timestamp="20210406 17:02:46.923" level="INFO">Clicking element 'xpath=//div[contains(text(), "44 - 55 inches")]/parent::div/preceding-sibling::div/div'.</msg>
+<status status="PASS" starttime="20210406 17:02:46.922" endtime="20210406 17:02:47.204"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:33.525" endtime="20210406 17:02:47.205"></status>
+</kw>
+<kw name="Click on product" library="homepage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210406 17:02:50.206" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210406 17:02:47.205" endtime="20210406 17:02:50.207"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${product_name}')]</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:50.207" endtime="20210406 17:02:50.238"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${product_name}')]</arg>
+</arguments>
+<msg timestamp="20210406 17:02:50.238" level="INFO">Clicking element 'xpath=//span[contains(text(), 'TV UHD LED 2020 (55",4K,Smart) 55UN7200PTF.ATM')]'.</msg>
+<status status="PASS" starttime="20210406 17:02:50.238" endtime="20210406 17:02:50.554"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:47.205" endtime="20210406 17:02:50.554"></status>
+</kw>
+<kw name="Click on Add to cart" library="homepage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_add_to_cart}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:50.555" endtime="20210406 17:02:53.761"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_add_to_cart}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:53.762" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Add to Cart')]'.</msg>
+<status status="PASS" starttime="20210406 17:02:53.761" endtime="20210406 17:02:53.855"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:50.554" endtime="20210406 17:02:53.855"></status>
+</kw>
+<kw name="Back to home" library="homepage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_home}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:53.855" endtime="20210406 17:02:53.924"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_home}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:53.924" level="INFO">Clicking element 'xpath=//img[@id="img-logo-desktop"]'.</msg>
+<status status="PASS" starttime="20210406 17:02:53.924" endtime="20210406 17:02:54.460"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:53.855" endtime="20210406 17:02:54.461"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:32.621" endtime="20210406 17:02:54.461"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:32.619" endtime="20210406 17:02:54.461" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC-DataDriven-TV3243">
+<kw name="add to cart">
+<arguments>
+<arg>TV</arg>
+<arg>32 - 43 inches</arg>
+<arg>TV FHD LED (43") 43LM5500PTA.ATM</arg>
+</arguments>
+<kw name="serach products" library="homepage">
+<arguments>
+<arg>${search_product_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_Search}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:54.463" endtime="20210406 17:02:54.476"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Search}</arg>
+<arg>${txt_input}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:54.477" level="INFO">Typing text 'TV' into text field 'xpath=//input[@placeholder="I am looking for..."]'.</msg>
+<status status="PASS" starttime="20210406 17:02:54.476" endtime="20210406 17:02:54.595"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:54.463" endtime="20210406 17:02:54.595"></status>
+</kw>
+<kw name="click on search button" library="homepage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_Search}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:54.596" endtime="20210406 17:02:54.703"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_Search}</arg>
+</arguments>
+<msg timestamp="20210406 17:02:54.703" level="INFO">Clicking element 'xpath=(//button[@id="btn-searchBox-input"])[1]'.</msg>
+<status status="PASS" starttime="20210406 17:02:54.703" endtime="20210406 17:02:54.952"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:54.595" endtime="20210406 17:02:54.953"></status>
+</kw>
+<kw name="Check box option" library="homepage">
+<arguments>
+<arg>${filter_name}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${txt_ScreenTechnology}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:54.953" endtime="20210406 17:02:57.344"></status>
+</kw>
+<kw name="Scroll element" library="homepage">
+<arguments>
+<arg>${txt_ScreenTechnology}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:57.345" endtime="20210406 17:02:57.360"></status>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:57.360" endtime="20210406 17:02:57.641"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:02:57.641" endtime="20210406 17:02:57.658"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:57.344" endtime="20210406 17:02:57.659"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[contains(text(), "${option}")]/parent::div/preceding-sibling::div/div</arg>
+</arguments>
+<msg timestamp="20210406 17:02:57.659" level="INFO">Clicking element 'xpath=//div[contains(text(), "32 - 43 inches")]/parent::div/preceding-sibling::div/div'.</msg>
+<status status="PASS" starttime="20210406 17:02:57.659" endtime="20210406 17:02:57.903"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:54.953" endtime="20210406 17:02:57.903"></status>
+</kw>
+<kw name="Click on product" library="homepage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210406 17:03:00.905" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210406 17:02:57.904" endtime="20210406 17:03:00.905"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${product_name}')]</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:03:00.906" endtime="20210406 17:03:01.770"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${product_name}')]</arg>
+</arguments>
+<msg timestamp="20210406 17:03:01.771" level="INFO">Clicking element 'xpath=//span[contains(text(), 'TV FHD LED (43") 43LM5500PTA.ATM')]'.</msg>
+<status status="PASS" starttime="20210406 17:03:01.771" endtime="20210406 17:03:02.012"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:57.904" endtime="20210406 17:03:02.012"></status>
+</kw>
+<kw name="Click on Add to cart" library="homepage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_add_to_cart}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:03:02.013" endtime="20210406 17:03:04.875"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_add_to_cart}</arg>
+</arguments>
+<msg timestamp="20210406 17:03:04.876" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Add to Cart')]'.</msg>
+<status status="PASS" starttime="20210406 17:03:04.875" endtime="20210406 17:03:04.985"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:03:02.012" endtime="20210406 17:03:04.985"></status>
+</kw>
+<kw name="Back to home" library="homepage">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${btn_home}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210406 17:03:04.986" endtime="20210406 17:03:05.022"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_home}</arg>
+</arguments>
+<msg timestamp="20210406 17:03:05.022" level="INFO">Clicking element 'xpath=//img[@id="img-logo-desktop"]'.</msg>
+<status status="PASS" starttime="20210406 17:03:05.022" endtime="20210406 17:03:05.483"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:03:04.986" endtime="20210406 17:03:05.483"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:54.462" endtime="20210406 17:03:05.484"></status>
+</kw>
+<status status="PASS" starttime="20210406 17:02:54.462" endtime="20210406 17:03:05.484" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210406 17:02:24.583" endtime="20210406 17:03:05.484"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Homepage">Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

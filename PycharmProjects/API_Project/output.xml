@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0 (Python 3.9.2 on darwin)" generated="20210407 00:08:26.599">
+<suite id="s1" name="Testcase" source="/Users/admin/PycharmProjects/API_Project/testcase">
+<suite id="s1-s1" name="TC Get Request" source="/Users/admin/PycharmProjects/API_Project/testcase/TC_Get_Request.robot">
+<test id="s1-s1-t1" name="Get_API">
+<kw name="Create Session" library="ExtendedRequestsLibrary">
+<doc>Create and return a HTTP session object to a server.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20210407 00:08:26.689" level="INFO">Creating Session using : alias=myssion, url=http://www.google.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210407 00:08:26.688" endtime="20210407 00:08:26.689"></status>
+</kw>
+<kw name="Get Request" library="ExtendedRequestsLibrary">
+<doc>Send a GET request on the session object found in the cache using the given ``label``.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210407 00:08:26.833" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210407 00:08:26.689" endtime="20210407 00:08:26.833"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code}</var>
+</assign>
+<msg timestamp="20210407 00:08:26.834" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210407 00:08:26.834" endtime="20210407 00:08:26.834"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210407 00:08:26.835" endtime="20210407 00:08:26.835"></status>
+</kw>
+<status status="PASS" starttime="20210407 00:08:26.688" endtime="20210407 00:08:26.835" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210407 00:08:26.615" endtime="20210407 00:08:26.836"></status>
+</suite>
+<suite id="s1-s2" name="TC Post Request" source="/Users/admin/PycharmProjects/API_Project/testcase/TC_Post_Request.robot">
+<test id="s1-s2-t1" name="Put_Registration">
+<kw name="Create Session" library="ExtendedRequestsLibrary">
+<doc>Create and return a HTTP session object to a server.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20210407 00:08:26.846" level="INFO">Creating Session using : alias=myssion, url=http://httpbin.org, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210407 00:08:26.845" endtime="20210407 00:08:26.846"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>firstname=the</arg>
+<arg>lastname=anh</arg>
+<arg>username=theanh</arg>
+<arg>password=theanh123</arg>
+<arg>email=theanh123@gmail.com</arg>
+</arguments>
+<assign>
+<var>${body}</var>
+</assign>
+<msg timestamp="20210407 00:08:26.846" level="INFO">${body} = {'firstname': 'the', 'lastname': 'anh', 'username': 'theanh', 'password': 'theanh123', 'email': 'theanh123@gmail.com'}</msg>
+<status status="PASS" starttime="20210407 00:08:26.846" endtime="20210407 00:08:26.846"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on given items.</doc>
+<arguments>
+<arg>Content-Type=multipart/form-data</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20210407 00:08:26.847" level="INFO">${header} = {'Content-Type': 'multipart/form-data'}</msg>
+<status status="PASS" starttime="20210407 00:08:26.847" endtime="20210407 00:08:26.847"></status>
+</kw>
+<kw name="Post Request" library="ExtendedRequestsLibrary">
+<doc>Send a POST request on the session object found in the cache using the given ``label``.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>/post</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210407 00:08:27.406" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210407 00:08:26.847" endtime="20210407 00:08:27.406"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code}</var>
+</assign>
+<msg timestamp="20210407 00:08:27.407" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210407 00:08:27.406" endtime="20210407 00:08:27.407"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210407 00:08:27.407" endtime="20210407 00:08:27.407"></status>
+</kw>
+<status status="PASS" starttime="20210407 00:08:26.845" endtime="20210407 00:08:27.408" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210407 00:08:26.836" endtime="20210407 00:08:27.408"></status>
+</suite>
+<status status="PASS" starttime="20210407 00:08:26.600" endtime="20210407 00:08:27.409"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Testcase">Testcase</stat>
+<stat pass="1" fail="0" id="s1-s1" name="TC Get Request">Testcase.TC Get Request</stat>
+<stat pass="1" fail="0" id="s1-s2" name="TC Post Request">Testcase.TC Post Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
